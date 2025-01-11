@@ -1,7 +1,38 @@
 {
-  "files": [],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+     "src/*": ["./src/*"],
+      "@components/*":["./src/components/*"],
+      "@assets/*":["./src/assets/*"],
+      "@models/*":["./src/models/*"],
+      "@utils/*":["./src/utils/*"],
+      "@hooks/*":["./src/hooks/*"],
+      "@context/*":["./src/context/*"],
+      "@pages/*":["./src/pages/*"],
+    },
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": ["jest", "@testing-library/jest-dom"]
+  },
+  "include": ["src/**/*", "src/setupTests.ts"],
+  "exclude": ["node_modules"],
   "references": [
-    { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
   ]
 }
