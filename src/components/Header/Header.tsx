@@ -10,12 +10,10 @@ import { useGetUser } from "@hooks/useGetUser";
 import { useTheme } from "@context/ThemeContext";
 import { LocalStorage } from "@utils/LocalStorage";
 import { Input } from "@components/Input";
-import { useErrorBoundary } from "react-error-boundary";
 
 const Header: React.FC = () => {
   const { data: user } = useGetUser();
   const { darkMode, setDarkMode } = useTheme();
-  const { showBoundary } = useErrorBoundary();
   const toogleDarkMode = () => {
     LocalStorage.set("darkMode", !darkMode);
     setDarkMode(!darkMode);
@@ -52,7 +50,7 @@ const Header: React.FC = () => {
               extraAttributes="w-5 h-5 m-1.5"
             />
           </div>
-          <div className="border border-border border-0.5 rounded-full cursor-pointer" onClick={()=>{showBoundary("")}}>
+          <div className="border border-border border-0.5 rounded-full cursor-pointer">
             <CircleImage
               src={user?.avatar_url ?? ""}
               alt="avatar"
