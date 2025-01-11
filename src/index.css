@@ -1,68 +1,40 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    --button-default-fgColor-rest: 37, 41, 46;
+    --button-default-bgColor-rest: 246, 248, 250;
+    --button-default-bgColor-hover: 239, 242, 245;
+    --button-default-bgColor-active: 42, 49, 60;
+    --button-default-borderColor-rest: 209, 217, 224;
+    --button-default-borderColor-hover: 209, 217, 224;
+    --button-default-borderColor-active: 209, 217, 224;
+    --fgColor-default: 31, 35, 40;
+    --default-bgColor: 255, 255, 255;
+    --fgColor-muted: 89, 99, 110;
+    --fgColor-accent: 9, 105, 218;
+    --header-default-bgColor-rest: 246, 248, 250;
+    --default-error: 220,0,0;
   }
-  a:hover {
-    color: #747bff;
+  .dark {
+    --button-default-fgColor-rest: 240, 246, 252;
+    --button-default-bgColor-rest: 33, 40, 48;
+    --button-default-bgColor-hover: 38, 44, 54;
+    --button-default-bgColor-active: 42, 49, 60;
+    --button-default-borderColor-rest: 61, 68, 77;
+    --button-default-borderColor-hover: 61, 68, 77;
+    --button-default-borderColor-active: 61, 68, 77;
+    --fgColor-default: 240, 246, 252;
+    --default-bgColor: 13, 17, 22;
+    --fgColor-muted: 145, 152, 161;
+    --fgColor-accent: 68, 147, 248;
+    --header-default-bgColor-rest: 13, 17, 22;
+    --default-error: 180,0,0;
   }
-  button {
-    background-color: #f9f9f9;
-  }
+}
+
+body{
+  
 }
