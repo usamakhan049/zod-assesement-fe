@@ -1,50 +1,88 @@
-# React + TypeScript + Vite
+# React Typescript Vite App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A straightforward React application designed to fetch and present GitHub user profiles and their corresponding repositories. It offers a clear and efficient interface for users to access and explore relevant information.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Github user and repostories fetching
+- Dark and Light Mode
+- Modern UI using Tailwind css and custom components
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Node.js
 
-- Configure the top-level `parserOptions` property like this:
+## Setup
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. Install dependencies:
+
+```bash
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Start the development server:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm run dev
 ```
+
+## Deployment
+
+1. Build the project:
+
+```bash
+npm run build
+```
+
+2. Deploy to your preferred hosting platform.
+
+### Manual Deployment Alternative
+
+1. Build your project
+
+```bash
+npm run build
+```
+
+2. Deploy the `dist` folder to your preferred hosting platform (Vercel, Netlify, etc.)
+
+3. Set up the following environment variables in your hosting platform:
+
+```env
+VITE_GITHUB_TOKEN=your_github_token
+VITE_GITHUB_USERNAME=your_github_username
+```
+
+4. Configure your hosting platform to:
+   - Use Node.js
+   - Set the build command to `npm run build`
+   - Set the publish directory to `dist`
+   - Add the redirect rule for SPA routing (/\* → /index.html)
+
+## Environment Setup
+
+Create a `.env` file in the root directory with the following variables:
+
+```env
+VITE_GITHUB_TOKEN=your_github_token
+VITE_GITHUB_USERNAME=your_github_username
+```
+
+## Project Structure
+
+- `/src/components/` - React custom components
+  - `Button.jsx` - Custom usable Button component
+  - `Input.jsx` - Custom usable Input component
+  - `Image.jsx` - HOC for circluar images 
+- `/src/pages/` - React pages components
+  - `Home.jsx` - Protected home page component
+- `App.jsx` - Main application component with routing
+
+## Technologies Used
+
+- React
+- React Query (@tanstack/react-query)
+- Tailwind CSS
+- React Router DOM
+- Jest
+- React testing library
