@@ -16,13 +16,13 @@ const Sidebar: React.FC = () => {
   if (isUserLoading) return <SidebarSkelton />;
   if (isError && error !== null)
     return (
-      <div className="flex flex-row w-full justify-center pe-4 lg:w-1/4 lg:justify-start">
+      <div className="flex flex-row w-full justify-center pe-0 lg:pe-4 lg:w-1/4 lg:justify-start">
         <Error retry={() => refetch()} textSize="text-xs" iconSize="!h-10 !w-10" />
       </div>
     );
 
   return (
-    <div className="flex flex-row w-full justify-center pe-4 lg:w-1/4 lg:justify-start">
+    <div className="flex flex-row w-full justify-center pe-0 lg:pe-4 lg:w-1/4 lg:justify-start">
       <div className="flex flex-col justify-start text-center lg:text-start">
         <div className="border border-border border-0.5 rounded-full w-1/2 lg:w-full self-center">
           <CircleImage src={user?.avatar_url ?? ""} alt="avatar" />
